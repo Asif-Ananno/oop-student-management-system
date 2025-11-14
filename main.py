@@ -1,29 +1,25 @@
-from services.student_services import add_student, view_student, update_student,delete_student
+from services.student_services import student_menu
+from services.teacher_services import teacher_menu
 
 def main_menu():
     while True:
-        print("\n Student Management System")
-        print("1. Add Student")
-        print("2. View All Students")
-        print("3. Update Student")
-        print("4. Delete Student")
-        print("5. Exit")
+        print("\n===  Student Management System ===")
+        print("1. Student Management")
+        print("2. Teacher Management")
+        print("3. Exit")
 
-        choice = input("Enter your choice (1-5): ")
+        choice = input("Enter your choice (1-3): ")
 
         if choice == '1':
-            add_student()
+            student_menu()   
         elif choice == '2':
-            view_student()
+            teacher_menu()      
         elif choice == '3':
-            update_student()
-        elif choice == '4':
-            delete_student()
-        elif choice == '5':
-            print("Exiting the system........")
+            print("👋 Exiting... Goodbye!")
             break
         else:
-            print("Invalid input")
+            print("Invalid choice! Please enter a number between 1-3.")
+       
         
 if __name__=="__main__":
     main_menu()
